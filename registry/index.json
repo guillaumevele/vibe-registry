@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "note": "A COMMUNITY registry of vibe skills/agents/MCP servers. None are official Mistral. Entries needing a key are listed but never auto-wired (no secret is stored or asked for). Verify a source before installing.",
+  "entries": [
+    {
+      "id": "vibe-fim",
+      "kind": "mcp",
+      "summary": "Verified bounded code edits + transactional multi-region + provably-additive test-gen via Codestral FIM.",
+      "official": false,
+      "source": {"type": "pypi", "ref": "vibe-fim[mcp]"},
+      "needs_key": "",
+      "wiring": {"mcp_servers": [
+        {"name": "vibe-fim", "transport": "stdio", "command": "vibe-fim-mcp", "startup_timeout_sec": 30.0,
+         "prompt": "surgical_patch / surgical_patch_many / grow_tests via Codestral FIM."}
+      ]},
+      "homepage": "https://github.com/guillaumevele/vibe-fim"
+    },
+    {
+      "id": "vibe-orchestra",
+      "kind": "mcp",
+      "summary": "Mistral model + specialist + plugin router, model-tools, and the /goal autonomous loop.",
+      "official": false,
+      "source": {"type": "pypi", "ref": "vibe-orchestra[mcp]"},
+      "needs_key": "",
+      "wiring": {"mcp_servers": [
+        {"name": "vibe-orchestra", "transport": "stdio", "command": "vibe-orchestra-mcp", "startup_timeout_sec": 30.0,
+         "prompt": "route(task) -> model/specialist/plugin; reason/vision/quick model-tools."}
+      ]},
+      "homepage": "https://github.com/guillaumevele/vibe-orchestra"
+    },
+    {
+      "id": "context7",
+      "kind": "mcp",
+      "summary": "Current docs for any library/framework by name.",
+      "official": false,
+      "source": {"type": "npx", "ref": "@upstash/context7-mcp"},
+      "needs_key": "",
+      "wiring": {"mcp_servers": [
+        {"name": "context7", "transport": "stdio", "command": "npx", "args": ["-y", "@upstash/context7-mcp"], "startup_timeout_sec": 90.0}
+      ]},
+      "homepage": "https://github.com/upstash/context7"
+    },
+    {
+      "id": "sequential-thinking",
+      "kind": "mcp",
+      "summary": "Structured multi-step reasoning scratchpad.",
+      "official": false,
+      "source": {"type": "npx", "ref": "@modelcontextprotocol/server-sequential-thinking"},
+      "needs_key": "",
+      "wiring": {"mcp_servers": [
+        {"name": "sequential-thinking", "transport": "stdio", "command": "npx", "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"], "startup_timeout_sec": 90.0}
+      ]},
+      "homepage": "https://github.com/modelcontextprotocol/servers"
+    },
+    {
+      "id": "apple-docs",
+      "kind": "mcp",
+      "summary": "Live Apple framework docs / WWDC / symbol search.",
+      "official": false,
+      "source": {"type": "npx", "ref": "@kimsungwhee/apple-docs-mcp"},
+      "needs_key": "",
+      "wiring": {"mcp_servers": [
+        {"name": "apple-docs", "transport": "stdio", "command": "npx", "args": ["-y", "@kimsungwhee/apple-docs-mcp"], "startup_timeout_sec": 90.0}
+      ]},
+      "homepage": "https://www.npmjs.com/package/@kimsungwhee/apple-docs-mcp"
+    },
+    {
+      "id": "mistral-mcp",
+      "kind": "mcp",
+      "summary": "Community MCP exposing Mistral OCR / Voxtral / Codestral FIM / workflows.",
+      "official": false,
+      "source": {"type": "git", "ref": "https://github.com/Swih/mistral-mcp"},
+      "needs_key": "MISTRAL_API_KEY",
+      "wiring": {"mcp_servers": []},
+      "homepage": "https://github.com/Swih/mistral-mcp"
+    },
+    {
+      "id": "github",
+      "kind": "mcp",
+      "summary": "Repos, PRs, issues, code search.",
+      "official": false,
+      "source": {"type": "npx", "ref": "@modelcontextprotocol/server-github"},
+      "needs_key": "GITHUB_PERSONAL_ACCESS_TOKEN",
+      "wiring": {"mcp_servers": []},
+      "homepage": "https://github.com/modelcontextprotocol/servers"
+    },
+    {
+      "id": "supabase",
+      "kind": "mcp",
+      "summary": "Postgres/backend: tables, SQL, edge functions, logs.",
+      "official": false,
+      "source": {"type": "npx", "ref": "@supabase/mcp-server-supabase"},
+      "needs_key": "SUPABASE_ACCESS_TOKEN",
+      "wiring": {"mcp_servers": []},
+      "homepage": "https://github.com/supabase-community/supabase-mcp"
+    }
+  ]
+}

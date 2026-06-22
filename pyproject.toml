@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vibe-registry"
+version = "0.1.0"
+description = "A community skill/plugin registry + installer for Mistral vibe: install curated skills, agents, and MCP servers by name."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Guillaume Vele" }]
+keywords = ["mistral", "vibe", "registry", "marketplace", "mcp", "skills", "agents"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Build Tools",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/guillaumevele/vibe-registry"
+
+[project.scripts]
+vibe-registry = "vibe_registry.cli:main"
+vibe-install = "vibe_registry.cli:main_install"
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["vibe_registry"]
